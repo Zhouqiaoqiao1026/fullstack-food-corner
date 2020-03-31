@@ -89,7 +89,7 @@ npm run serve
 
 ## 项目截图
 移动端：
-![image]https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/1.png
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/1.png)
 ![image]
 ![image]
 ![image]
