@@ -90,13 +90,13 @@ npm run serve
 ## 项目截图
 移动端：
 ![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/1.png)
-![image]
-![image]
-![image]
-![image]
-![image]
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/2.png)
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/3.png)
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/4.png)
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/5.png)
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/5.1.png)
 
 后台管理系统：
-![image]
-![image]
-![image]
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/6.png)
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/7.png)
+![image](https://github.com/Zhouqiaoqiao1026/fullstack-food-corner/blob/master/screenshots/8.png)
