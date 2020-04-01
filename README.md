@@ -24,7 +24,7 @@ vue + node.js + express + mongodb + elementui
 
 ```
 运行前你需要安装好：
-node.js、mongodb
+node.js 10+、mongodb、nodemon、vue cli3
 
 项目运行：
 clone项目到本地
