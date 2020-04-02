@@ -1,0 +1,245 @@
+//reset
+*{
+    box-sizing:border-box;
+    outline: none;
+}
+
+html{
+    font-size: 13px;
+}
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
+    background: #ffffff;
+   
+}
+a{
+    color: #999;
+}
+p{
+    line-height: 1.5em;
+}
+
+//颜色
+$colors:(
+    "primary":#eb5d5e,
+    "grey-1":#f7f7f7,
+    "grey-2":#b0b0b0,
+    "grey-3":#999,
+    "white":#fff,
+    "milk":rgb(255, 249, 249)
+);
+.box-shadow{
+    box-shadow: 1px 1px 6px #d3d1d1;
+}
+//轮播图的点点
+.pagination-home{
+    .swiper-pagination-bullet{
+      opacity: 1;
+      border-radius: 50%;
+      background: #ffffff;
+      &.swiper-pagination-bullet-active{
+        background: map-get($colors,'primary');
+      }
+    }
+  }
+//边框色
+$border-color:map-get($colors, 'light-1' );
+@each $colorKey,$color in $colors{
+    .text-#{$colorKey}{
+        color:$color ;
+    }
+    .bg-#{$colorKey}{
+        background-color:$color;
+    }
+}
+//text-align
+@each $var in (left,center,right){
+    .text-#{$var}{
+        text-align: $var !important;
+    }
+}
+//字号
+$base-font-size:1rem;
+$font-sizes:(
+    xxxs:0.4615,       //6px
+    xxs:0.6154,       //8px
+    xs:0.7692,        //10px
+    sm:0.9231,        //12px
+    md:1.0769,        //14px
+    lg:1.2308,        //16px
+    llg:1.3846,      //18px
+    ic:2.4              //26px
+);
+@each $sizekey, $size in $font-sizes {
+    .fs-#{$sizekey} {
+     font-size: $size * $base-font-size;
+    }
+  }
+//text-overflow
+.text-ellipsis{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;  //不要换行
+}
+//flex 弹性布局
+.d-flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column; //垂直排列
+}
+.flex-wrap{
+    flex-wrap: wrap; //元素换行
+}
+
+$flex-jc:(
+    start:flex-start, //元素在主轴（页面）上由左或者上开始排列
+    end:flex-end,     //元素在主轴（页面）上由右或者下开始排列
+    center:center,
+    between:space-between,//元素在主轴（页面）上左右两端或者上下两端开始排列
+    around:space-around,  //每个元素两侧的间隔相等
+);
+@each $key, $value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+  
+//align-items 元素在主轴（页面）当前行的横轴（纵轴）方向上的对齐方式
+$flex-ai:(
+    start:flex-start,  //靠上对齐
+    end:flex-end,  //靠下对齐
+    center:center,  //居中对齐
+    stretch:stretch, //元素位于容器的中心
+);
+@each $key,$value in $flex-ai{
+    .ai-#{$key}{
+        align-items: $value;
+    }
+} 
+//右边自动拉伸
+.flex-1{
+    flex:1;
+}
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+//常用边距定义
+//spacing
+//.mt-1=>margin top .pd-2
+$spacing-types:(m:margin,p:padding);
+$spacing-directions:(t:top,r:right,b:bottom,l:left);
+$spacing-base-size:1rem;
+$spacing-sizes:(
+    0:0,
+    1:0.25,
+    2:0.75,
+    3:1,
+    4:1.5,
+    5:3,
+    6:4
+);
+@each $typeKey,$type in $spacing-types {
+    //m-1
+    @each $directionKey,$direction in $spacing-directions{
+        @each $sizeKey,$size in $spacing-sizes {
+             .#{$typeKey}-#{$sizeKey}{
+                #{$type}:$size*$spacing-base-size;
+             }
+            }
+        }
+     //mx-1,my-1
+        @each $sizeKey,$size in $spacing-sizes {
+             .#{$typeKey}x-#{$sizeKey}{
+                #{$type}-left:$size*$spacing-base-size;
+                #{$type}-right:$size*$spacing-base-size;
+             }
+             .#{$typeKey}y-#{$sizeKey}{
+                #{$type}-top:$size*$spacing-base-size;
+                #{$type}-bottom:$size*$spacing-base-size;
+             }
+            }
+
+    //mt-1(margintop)
+    @each $directionKey,$direction in $spacing-directions{
+        @each $sizeKey,$size in $spacing-sizes {
+             .#{$typeKey}#{$directionKey}-#{$sizeKey}{
+                #{$type}-#{$direction}:$size*$spacing-base-size;
+             }
+            }
+        }
+}
+//width,height
+.w-100{
+    width: 100%;
+}
+.w-90{
+    width: 90%;
+}
+.w-45{
+    width: 45%;
+}
+.h-45{
+    height: 45%;
+}
+.h-100{
+    height: 100%;
+}
+//button
+.btn{
+    border:none;
+    border-radius: 0.1538rem;
+    font-size: map-get($font-sizes,'sm');
+    padding: 0.2rem 0.6rem;
+    &.btn-lg{
+        background: #fff5f5;
+        border: 1px solid #eceef0;
+        padding: 0.8rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        i{
+            font-weight: bold;
+            color: map-get($colors , 'primary');
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+//nav -header
+.nav{
+    display: flex; //横向排布
+    .nav-link{
+        color:map-get($colors, "grey-3");
+     &.router-link-active{
+        color:map-get($colors, "primary");
+     }
+}}
+//nav -news
+.nav1{
+    .nav-item{
+     border-bottom: 3px solid transparent; //防止对不齐
+     padding-bottom: 0.2rem;
+     color: map-get($colors, "dark-1");
+    &.active{
+        border-bottom: 3px solid;
+        border-bottom-color:  map-get($colors, "primary");
+        color: map-get($colors, "primary");
+    }
+}}
+//sprite
+
+//borders
+@each $dir in(top,right,bottom,left){
+    .border-#{$dir}{
+        border-#{$dir}:1px solid $border-color;
+    }
+}
+
+
+
