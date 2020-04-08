@@ -12,7 +12,7 @@
 
 > 部署环境
 
-> 项目地址：[webapp](http://foodcorner.bol4.top/web)、[后台管理系统](http://foodcorner.bol4.top/admin)
+> 项目地址：[webapp](http://foodcorner.bol4.top/web)(请使用chrome移动端模式查看)、[后台管理系统](http://foodcorner.bol4.top/admin)
 
 
 
